@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -17,7 +17,7 @@ const SkipHirePage = () => {
         const data = await getSkips();
         setSkips(data);
         if (data.length > 0) {
-          setSelectedSkipId(data[0].id); // Select the first skip by default
+          setSelectedSkipId(data[0].id); 
         }
       } catch (err) {
         console.error('Error fetching skips:', err);
@@ -29,6 +29,7 @@ const SkipHirePage = () => {
     fetchData();
   }, []);
 
+    // steps for the progress bar
   const steps = [
     { id: 1, name: 'Postcode', completed: true },
     { id: 2, name: 'Waste Type', completed: true },
@@ -70,7 +71,6 @@ const SkipHirePage = () => {
       {/* Progress Steps */}
       <div className="bg-white border-b shadow-sm w-full">
         <div className=" px-2 sm:px-4 py-3 sm:py-4">
-          {/* Mobile Progress - Simplified */}
           <div className="block sm:hidden">
             <div className="flex items-center justify-center space-x-1">
               {steps.map((step, index) => (
@@ -97,7 +97,6 @@ const SkipHirePage = () => {
             </div>
           </div>
 
-          {/* Desktop Progress - Full */}
           <div className="hidden sm:flex items-center w-full justify-center">
             {steps.map((step, index) => (
               <div key={step.id} className="flex items-center flex-shrink-0">
@@ -126,7 +125,7 @@ const SkipHirePage = () => {
         </div>
       </div>
 
-      {/* Main Content */}
+     
       <div className="w-full max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <div className="text-center mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
@@ -137,7 +136,7 @@ const SkipHirePage = () => {
           </p>
         </div>
 
-        {/* Skip Grid */}
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {skips.map((skip) => (
             <Card
