@@ -69,7 +69,7 @@ const SkipHirePage = () => {
     <div className="min-h-screen w-full bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Progress Steps */}
       <div className="bg-white border-b shadow-sm w-full">
-        <div className="w-full px-2 sm:px-4 py-3 sm:py-4">
+        <div className=" px-2 sm:px-4 py-3 sm:py-4">
           {/* Mobile Progress - Simplified */}
           <div className="block sm:hidden">
             <div className="flex items-center justify-center space-x-1">
@@ -98,7 +98,7 @@ const SkipHirePage = () => {
           </div>
 
           {/* Desktop Progress - Full */}
-          <div className="hidden sm:flex items-center justify-between w-full">
+          <div className="hidden sm:flex items-center w-full justify-center">
             {steps.map((step, index) => (
               <div key={step.id} className="flex items-center flex-shrink-0">
                 <div className="flex items-center">
